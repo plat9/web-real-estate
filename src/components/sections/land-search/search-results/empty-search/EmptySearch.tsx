@@ -15,13 +15,13 @@ const EmptySearch: React.FC<Props> = ({ onResetSearch, className }) => {
       <EmptySearchIcon />
 
       <span className="lg:mb-10">
-        Không tìm thấy kết quả phù hợp. <br />
-        Bạn có muốn{" "}
+        لم يتم العثور على نتائج مطابقة. <br />
+        هل تريد{" "}
         <button
           onClick={onResetSearch}
           className="button-click-animation hover:underline"
         >
-          đặt lại bộ lọc?
+          إعادة تعيين الفلاتر؟
         </button>
       </span>
     </div>

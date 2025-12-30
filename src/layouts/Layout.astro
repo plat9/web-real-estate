@@ -18,24 +18,50 @@ const currentPage = Astro.url.pathname;
 ---
 
 <!doctype html>
-<html lang="en" class="bg-[--color-secondary-lighter]">
+<html lang="ar" dir="rtl" class="bg-[--color-secondary-lighter] font-arabic">
   <head>
     <meta charset="UTF-8" />
-    <!-- TODO: update metadata + SEO -->
-    <!-- TODO: SEO optimization -->
-    <meta
-      name="description"
-      content="Khám phá cơ hội đầu tư đất đai với chúng tôi. Đối tác đáng tin cậy cho những dự án bất động sản chiến lược. Mở khóa tiềm năng của các bất động sản giá trị và bắt đầu hành trình đầu tư của bạn ngay hôm nay."
+    <meta name="description"
+      content="مكتب الطيب للعقار - حلول عقارية متكاملة في الرمادي، الأنبار. نقدم لك أفضل العروض العقارية والاستثمارات المربحة. تواصل معنا اليوم."
     />
-    <meta property="og:title" content="VietLand - Đầu Tư Bất Động Sản" />
+    <title>{pageTitle} | مكتب الطيب للعقار</title>
+    <meta property="og:title" content="مكتب الطيب للعقار | الرمادي - الأنبار" />
+    <meta
+      property="og:description"
+      content="اكتشف الفرص العقارية المميزة مع مكتب الطيب للعقار. نقدم لك أفضل الخدمات العقارية في الرمادي والأنبار."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_IQ" />
+    <meta property="og:site_name" content="مكتب الطيب للعقار" />
     <meta
       property="og:image"
-      content="https://images.ctfassets.net/2lc6rsj68vep/1cknc0YIwoJI3FhJtHXiP8/140e57b38253c0a579f7b9f0e6a7e92a/main-hero-min.jpg?h=250"
+      content="/images/logo.png"
     />
     <meta
       property="og:url"
-      content="https://deft-entremet-3bc804.netlify.app/"
+      content="https://altayyib-realestate.com"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a56db" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Load Tajawal Arabic font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    
+    <!-- RTL CSS -->
+    <style>
+      :root {
+        --font-sans: 'Tajawal', system-ui, -apple-system, sans-serif;
+      }
+      body {
+        font-family: 'Tajawal', sans-serif;
+        text-align: right;
+      }
+    </style>
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Preload images for main page -->

@@ -12,14 +12,14 @@ const currentPage = Astro.url.pathname;
 ---
 
 <header
-  class="fixed left-0 top-0 z-50 flex w-full flex-row items-center overflow-hidden py-2"
+  class="fixed left-0 top-0 z-50 flex w-full flex-row items-center overflow-hidden py-2 font-arabic"
 >
   <div
     class={`loaded-hero-logo flex-1 px-4 md:px-8  ${
       currentPage === "/tim-dat" ? "lg:px-6" : "lg:px-16"
     }`}
   >
-    <Logo companyTitle="VietLand" className="" />
+    <Logo companyTitle="مكتب الطيب للعقار" className="" />
   </div>
 
   <ul class="loaded-hero-links hidden flex-wrap gap-x-2 xl:flex">
@@ -38,7 +38,7 @@ const currentPage = Astro.url.pathname;
     }`}
   >
     <div class="hidden xl:block">
-      <ButtonSmall id="callback-form-btn">Liên hệ</ButtonSmall>
+      <ButtonSmall id="callback-form-btn">اتصل بنا</ButtonSmall>
     </div>
     <div class="hidden sm:block">
       <CallButton phone={COMPANY_PHONE_NUMBER} />

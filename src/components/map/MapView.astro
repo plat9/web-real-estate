@@ -314,6 +314,10 @@ const { locations, title, fullHeight } = Astro.props;
     }
 
     private initLeafletInstance() {
+      // Debug: Check if API key is loaded
+      const maptilerKey = import.meta.env.PUBLIC_MAPTILES_KEY;
+      console.log('Maptiler API Key:', maptilerKey ? `${maptilerKey.substring(0, 8)}...` : 'NOT FOUND');
+      
       const map = L.map(this, defaultLeafletMapOptions).setView(
         this.center,
         14,
@@ -354,11 +358,24 @@ const { locations, title, fullHeight } = Astro.props;
       // }).addTo(map);
 
       // Maptiler - streets
-      L.tileLayer(
-        `https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${
-          import.meta.env.PUBLIC_MAPTILES_KEY
-        }`,
-      ).addTo(map);
+      if (maptilerKey && maptilerKey !== 'your_maptiler_api_key_here') {
+        try {
+          L.tileLayer(
+            `https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${maptilerKey}`,
+            {
+              attribution: '© MapTiler © OpenStreetMap contributors',
+              maxZoom: 18,
+            }
+          ).addTo(map);
+          console.log('Using Maptiler tiles');
+        } catch (error) {
+          console.error('Maptiler failed, falling back to OpenStreetMap:', error);
+          this.addOpenStreetMapTiles(map);
+        }
+      } else {
+        console.log('No valid Maptiler key found, using OpenStreetMap');
+        this.addOpenStreetMapTiles(map);
+      }
 
       // Maptiler - topo
       // L.tileLayer(
@@ -371,6 +388,13 @@ const { locations, title, fullHeight } = Astro.props;
       map.getContainer().focus = () => {};
 
       this.leafletMap = map;
+    }
+
+    private addOpenStreetMapTiles(map: L.Map) {
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19,
+      }).addTo(map);
     }
 
     private initLeafletControls(map: L.Map) {

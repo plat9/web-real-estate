@@ -1,11 +1,11 @@
 import type { LandTypeOption } from "./search-filters/SearchFilters";
 
 export const SORT_OPTIONS = [
-  "Mới thêm trước",
-  "Rẻ nhất trước",
-  "Đắt nhất trước",
-  "Nhỏ nhất trước",
-  "Lớn nhất trước",
+  "الأحدث أولاً",
+  "الأقل سعراً",
+  "الأعلى سعراً",
+  "الأصغر مساحة",
+  "الأكبر مساحة",
 ] as const;
 
 export type SortOption = (typeof SORT_OPTIONS)[number];

@@ -30,18 +30,18 @@ interface Props {
 }
 
 const sortLands = (lands: Land[], sortOption: SortOption | null) => {
-  if (!sortOption || sortOption === "Mới thêm trước") return lands;
+  if (!sortOption || sortOption === "الأحدث أولاً") return lands;
 
-  if (sortOption === "Rẻ nhất trước")
+  if (sortOption === "الأقل سعراً")
     return lands.toSorted((a, b) => a.price! - b.price!);
 
-  if (sortOption === "Đắt nhất trước")
+  if (sortOption === "الأعلى سعراً")
     return lands.toSorted((a, b) => b.price! - a.price!);
 
-  if (sortOption === "Nhỏ nhất trước")
+  if (sortOption === "الأصغر مساحة")
     return lands.toSorted((a, b) => a.area! - b.area!);
 
-  if (sortOption === "Lớn nhất trước")
+  if (sortOption === "الأكبر مساحة")
     return lands.toSorted((a, b) => b.area! - a.area!);
 
   return lands;
@@ -147,8 +147,8 @@ const SearchResults: React.FC<Props> = ({
     <div className=" relative  z-10  min-w-[20rem]   pl-4 pr-2 pt-4  @container/search-results md:flex-1 md:max-lg:self-start lg:overflow-hidden ">
       <div className=" mb-3 grid cursor-default grid-cols-2 items-center gap-0.5 text-base font-normal lg:pl-1.5">
         <div className="hidden lg:inline-block">
-          Hiện có{" "}
-          <strong className="font-semibold">{lands.length} lô đất</strong> bán
+          متوفر{" "}
+          <strong className="font-semibold">{lands.length} عقار</strong> للبيع
         </div>
 
         <ViewSwitch
@@ -162,12 +162,12 @@ const SearchResults: React.FC<Props> = ({
             onClick={onOpenFilters}
             className="button-click-animation z-40 inline-flex h-fit w-fit cursor-pointer items-center justify-center gap-x-1.5 place-self-end rounded-lg  border-2 border-solid  px-2 py-1 text-sm font-medium text-[--color-secondary] transition duration-300 ease-in-out hover:border-[--color-secondary] hover:bg-[--color-secondary-transparent-lighter] hover:text-[--color-secondary-darker] md:hidden"
           >
-            <span className="text-[--color-text]">Bộ lọc</span>
+            <span className="text-[--color-text]">الفلاتر</span>
             <FilterIcon />
           </button>
 
           <span className="hidden @3xl/search-results:inline-block">
-            Sắp xếp theo:
+            الترتيب حسب:
           </span>
           <Dropdown
             options={SORT_OPTIONS}

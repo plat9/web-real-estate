@@ -5,16 +5,16 @@ import Hero from "../components/sections/hero/Hero.astro";
 import About from "../components/sections/about/About.astro";
 import LandPreviews from "../components/sections/land-previews/LandPreviews.astro";
 
-import dataModel from "../model/ContentfulModel.js";
+import dataModel from "../model/ContentfulModel";
 const promotedLands = await dataModel.getPromotedLands();
 ---
 
-<Layout pageTitle="Viet Land">
+<Layout pageTitle="مكتب الطيب للعقار">
   <Hero />
   <LandPreviews
     promotedLands={promotedLands}
-    heading="Dự án hiện tại"
-    subheading="Công ty giới thiệu mấy dự án đất đang bán với tỷ giá và diện tích các loại đang bán."
+    heading="المشاريع الحالية"
+    subheading="مكتب الطيب للعقار - وكيلك العقاري الموثوق في الأنبار. نقدم لكم أفضل العروض العقارية بأسعار تنافسية. للاستشارة المجانية وجولة العقارات، نرجو زيارة مكتبنا في الفلوجة."
     scrollEffect={true}
     fullHeight={true}
     gradient={true}

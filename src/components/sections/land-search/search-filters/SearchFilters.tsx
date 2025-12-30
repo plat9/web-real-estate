@@ -25,7 +25,7 @@ interface Props {
   onClose?: () => void;
 }
 
-const landTypesOptions = ["Khuyến khích", "Yêu thích"] as const;
+const landTypesOptions = ["المميزة", "المفضلة"] as const;
 export type LandTypeOption = (typeof landTypesOptions)[number];
 
 const SearchFilters: React.FC<Props> = ({
@@ -99,13 +99,13 @@ const SearchFilters: React.FC<Props> = ({
         id="search-filters"
       >
         <span className="mb-4 block text-base font-semibold opacity-50">
-          Bộ lọc:
+          الفلاتر:
         </span>
 
         <div className="mb-6">
-          <span className="mb-4 block text-base font-semibold">Kiểu đất</span>
+          <span className="mb-4 block text-base font-semibold">نوع العقار</span>
 
-          <legend className="sr-only">Type of land radio buttons</legend>
+          <legend className="sr-only">أزرار اختيار نوع العقار</legend>
 
           <SelectionInput
             options={landTypesOptions}
@@ -124,7 +124,7 @@ const SearchFilters: React.FC<Props> = ({
 
         <div className="mb-6">
           <span className="mb-4 block text-base font-semibold">
-            Giá, tỷ đồng
+            السعر، مليار دينار
           </span>
 
           <RangeInput
@@ -140,7 +140,7 @@ const SearchFilters: React.FC<Props> = ({
         </div>
         <div className="mb-6">
           <span className="mb-4 block text-base font-semibold">
-            Diện tích, m<sup>2</sup>
+            المساحة، م<sup>2</sup>
           </span>
 
           <RangeInput
@@ -160,14 +160,14 @@ const SearchFilters: React.FC<Props> = ({
           onClick={handleFiltersSubmit}
           className="button-click-animation block w-full cursor-pointer rounded-lg border-2 border-solid border-[--color-secondary] bg-[--color-secondary] px-8 py-2 text-center text-sm font-medium tracking-wide text-white transition   duration-300 ease-in-out hover:opacity-90"
         >
-          Apply
+          تطبيق
         </button>
         <div className="mt-1 flex justify-center">
           <button
             className="button-click-animation block cursor-pointer rounded-lg px-3 py-1.5 text-center text-sm font-medium text-[--color-secondary] transition duration-300 ease-in-out hover:text-[--color-secondary-darker]"
             onClick={handleFiltersReset}
           >
-            Reset
+            إعادة تعيين
           </button>
         </div>
       </div>

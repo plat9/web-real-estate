@@ -43,10 +43,10 @@ const getFilteredLands = (
       // Favorite lands
       .filter(
         (land) =>
-          !typeFilters.includes("Yêu thích") || isFavouriteLand(land.slug),
+          !typeFilters.includes("المفضلة") || isFavouriteLand(land.slug),
       )
       // Promoted lands
-      .filter((land) => !typeFilters.includes("Khuyến khích") || land.promoted)
+      .filter((land) => !typeFilters.includes("المميزة") || land.promoted)
   );
 };
 

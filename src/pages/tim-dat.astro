@@ -13,7 +13,7 @@ const lands = await dataModel.getAllLands();
 const maxLandPrice = Math.max(...lands.map((land) => land.price!));
 const maxLandSize = Math.max(...lands.map((land) => land.area!));
 
-const title = "VietLand - tìm mảnh đất tốt đẹp nhất";
+const title = "مكتب الطيب للعقار - البحث عن أفضل العقارات";
 ---
 
 <Layout pageTitle={title}>
@@ -33,7 +33,7 @@ const title = "VietLand - tìm mảnh đất tốt đẹp nhất";
       >
         <ScrollButton
           id="scroll-btn"
-          ariaLabel="Go up to the beginning"
+          ariaLabel="العودة إلى الأعلى"
           direction="up"
           destinationElementId="dynamic-lands-search"
           className="  !fixed bottom-4  "
